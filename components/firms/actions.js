@@ -8,92 +8,104 @@ import {
   FILTER_TRIP_LENGTH,
   FILTER_TREATMENT_STAGE,
   FILTER,
-  FILTER_OFFERING
+  FILTER_OFFERING,
 } from "./constant";
 import { initializeStore } from "../../redux/store";
 
+const algoliasearch = require("algoliasearch");
+const client = algoliasearch("YWD7NXKVQE", "14fb2932f71955e1d537fda41b8a8926");
+const index = client.initIndex("dev_TAD");
+
+export const getAlgoFirms = () => {
+  return (dispatch) =>
+    index.search("").then((res) => {
+      dispatch(getFirmsSuccess(res));
+      console.log(res.hits);
+    });
+};
+
 export const getFirms = () => {
-  return dispatch =>
+  return (dispatch) =>
     axios
       .get(`https://my-json-server.typicode.com/akenzua/tad-data/data`)
-      .then(res => {
+      .then((res) => {
         dispatch(getFirmsSuccess(res.data));
       });
 };
 
 export const getOfferings = () => {
-  return dispatch =>
+  return (dispatch) =>
     axios
       .get(`https://my-json-server.typicode.com/akenzua/offferings/offerings`)
-      .then(res => {
+      .then((res) => {
         dispatch(getOfferingSuccess(res.data));
       });
 };
 
-export const getFirmsed = filters => {
-  return dispatch =>
+export const getFirmsed = (filters) => {
+  return (dispatch) =>
     axios
       .get(`https://my-json-server.typicode.com/akenzua/tad-data/data`)
-      .then(res => {
+      .then((res) => {
         dispatch(getFirmsSuccess(res.data));
       })
       .then(() => dispatch(filtered(filters)));
 };
 
-export const getFirmsSuccess = firms => ({
+export const getFirmsSuccess = (firms) => ({
   type: GET_FIRMS_SUCCESS,
-  payload: firms
+  payload: firms,
 });
 
-export const getOfferingSuccess = offerings => ({
+export const getOfferingSuccess = (offerings) => ({
   type: GET_OFFERINGS_SUCCESS,
-  payload: offerings
+  payload: offerings,
 });
 
 export const getFirmsStarted = () => ({
-  type: GET_FIRMS_STARTED
+  type: GET_FIRMS_STARTED,
 });
 
-export const filtered = filters => ({
+export const filtered = (filters) => ({
   type: FILTER,
-  payload: filters.filter(value => Object.keys(value).length != 0)
+  payload: filters.filter((value) => Object.keys(value).length != 0),
 });
 
-export const filterOfferings = pool => {
+export const filterOfferings = (pool) => {
   return (dispatch, getState) => {
     dispatch(getFirms()).then(() => dispatch(getOfferings()));
     const offerings = getState().firms.offerings;
-    const filteredPool = pool.filter(value => Object.keys(value).length != 0);
+    const filteredPool = pool.filter((value) => Object.keys(value).length != 0);
 
     const selectedOfferings = filteredPool.reduce((acc, value) => {
-      return acc.filter(offering =>
+      return acc.filter((offering) =>
         offering[Object.keys(value)].includes(Object.values(value)[0])
       );
     }, offerings);
 
     dispatch({
       type: FILTER_OFFERING,
-      payload: selectedOfferings
+      payload: selectedOfferings,
     });
   };
 };
 
-export const filterAge = age => ({
+export const filterAge = (age) => ({
   type: FILTER_AGE,
-  payload: age
+  payload: age,
 });
 
-export const filterInsuranceType = insuranceType => ({
+export const filterInsuranceType = (insuranceType) => ({
   type: FILTER_INSURANCE_TYPE,
-  payload: insuranceType
+  payload: insuranceType,
 });
 
-export const filterTripLength = tripLength => ({
+export const filterTripLength = (tripLength) => ({
   type: FILTER_TRIP_LENGTH,
-  payload: tripLength
+  payload: tripLength,
 });
 
-export const filterTreatmentStage = treatmentStage => ({
+export const filterTreatmentStage = (treatmentStage) => ({
   type: FILTER_TREATMENT_STAGE,
-  payload: treatmentStage
+  payload: treatmentStage,
 });
