@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Listings = (props) => {
   // const f = useSelector((state) => state.firms.firms);
-  // console.log(f);
+  // console.log(props);
   return (
     <Fragment>
       <Firms />

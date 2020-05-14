@@ -1,10 +1,8 @@
-import {  combineReducers } from 'redux';
-import footerReducer from '../components/footer/reducer'
-import firmsReducer from '../components/firms/reducer'
+import { combineReducers } from "redux";
+import firmsReducer from "../components/firms/reducer";
 
 const rootReducer = combineReducers({
-    footer: footerReducer,
-    firms: firmsReducer
+  firms: firmsReducer,
 });
 
 export default rootReducer;
