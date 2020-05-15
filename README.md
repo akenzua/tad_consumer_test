@@ -19,6 +19,7 @@ Consumer search for the Travel Adviser Directory
 
 ## Test
 
+### Run
     npm run test
 
 ### Approach
@@ -31,9 +32,9 @@ Consumer search for the Travel Adviser Directory
 
 ### Location
 
-    Where a component has its own folder, the test should be colocated in the folder, however, where the component
+    Where a component has its own folder, the test should be colocated in the folder, however, where the 
     
-    share  folder with other files, the test should be located in src/**test** folder.
+    component share  folder with other files, the test should be located in src/**test** folder.
 
 ### Naming Convention
 
@@ -41,12 +42,16 @@ Consumer search for the Travel Adviser Directory
 
 ### Clean up
 
-    After every test there must be a tear down process by unmounting every components used in order to prevent the pollution     of test environment.
+    After every test there must be a tear down process by unmounting every components used in order to prevent
+    
+    the pollution of test environment.
 
 ### Parent Child Testing
 
-    A test for a parent component should not be awareof the internal implementation of its children component. It is enough     for it to just be aware the existence of the children components.
+    A test for a parent component should not be awareof the internal implementation of its children component.
+    
+    It is enough for it to just be aware the existence of the children components.
 
 ### Bug
 
-    Whenever u bug is fixed, there should be a regression test
+    Whenever a bug is fixed, there should be a regression test
