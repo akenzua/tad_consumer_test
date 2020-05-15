@@ -10,19 +10,14 @@ Consumer search for the Travel Adviser Directory
 ## Installation
 
 ```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+git clone https://github.com/moneyadviceservice/tad_consumer.git
+
+cd tad_consumer
+
+npm install
+
+npm run dev
 ```
-
-    ```javascript
-    git clone https://github.com/moneyadviceservice/tad_consumer.git
-
-    cd tad_consumer
-
-    npm install
-
-    npm run dev
-    ```
 
 ## Test
 
