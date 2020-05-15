@@ -25,10 +25,7 @@ npm run dev
     npm run test
 
 ### Approach
-
-    Where possible, the approach to testing should be Test Driven Development (TDD) or at least be written
-    
-    at the same time as the component being tested.
+Where possible, the approach to testing should be Test Driven Development (TDD) or at least be written at the same time as the component being tested.
 
 ### Tools
 
