@@ -24,7 +24,9 @@ Consumer search for the Travel Adviser Directory
 
 ### Approach
 
-    Where possible, the approach to testing should be Test Driven Development (TDD) or at least be written at the same time     as the component being tested.
+    Where possible, the approach to testing should be Test Driven Development (TDD) or at least be written
+    
+    at the same time as the component being tested.
 
 ### Tools
 
@@ -34,11 +36,11 @@ Consumer search for the Travel Adviser Directory
 
     Where a component has its own folder, the test should be colocated in the folder, however, where the 
     
-    component share  folder with other files, the test should be located in src/**test** folder.
+    component share  folder with other files, the test should be located in `src/**test** folder`.
 
 ### Naming Convention
 
-    All test files should have the same name with the their files and also an extension of .test.js
+    All test files should have the same name with the their files and also an extension of `.test.js`
 
 ### Clean up
 
