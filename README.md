@@ -9,6 +9,7 @@ Consumer search for the Travel Adviser Directory
 
 ## Installation
 
+    ```javascript
     git clone https://github.com/moneyadviceservice/tad_consumer.git
 
     cd tad_consumer
@@ -16,6 +17,7 @@ Consumer search for the Travel Adviser Directory
     npm install
 
     npm run dev
+    ```
 
 ## Test
 
