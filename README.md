@@ -33,7 +33,7 @@ Where possible, the approach to testing should be Test Driven Development (TDD) 
 Jest and Enzymes
 
 ### Location
-Where a component has its own folder, the test should be colocated in the folder, however, where the component share  folder with other files, the test should be located in `src/**test** folder`.
+Where a component has its own folder, the test should be colocated in the folder, however, where the component share  folder with other files, the test should be located in `src/__test__` folder.
 
 ### Naming Convention
 All test files should have the same name with the their files and also an extension of `.test.js`
