@@ -31,9 +31,9 @@ Consumer search for the Travel Adviser Directory
 
 ### Location
 
-    Where a component has its own folder, the test should be colocated in the folder, however, 
+    Where a component has its own folder, the test should be colocated in the folder, however, where 
     
-    where the component share  folder with other files, the test should be located in src/**test** folder.
+    the component share  folder with other files, the test should be located in src/**test** folder.
 
 ### Naming Convention
 
