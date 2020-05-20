@@ -39,7 +39,21 @@ Where a component has its own folder, the test should be colocated in the folder
 All test files should have the same name with the their files and also an extension of `.test.js`
 
 ### Clean up
-After every test there must be a tear down process by unmounting every components used in order to prevent the pollution of test environment.
+After every test there must be a tear down process by unmounting every components used in order to prevent the pollution of test environment
+```javascript
+import { mount } from 'enzyme'
+import App from './App'
+
+let wrapped;
+
+beforeEach(()=> {
+  wrapped = mount (<App/>)
+})
+
+afterEach(() => {
+  wrapped = wrapped.unmount()
+})
+```
 
 ### Parent Child Testing
 A test for a parent component should not be awareof the internal implementation of its children component. It is enough for it to just be aware the existence of the children components.
