@@ -41,6 +41,7 @@ All test files should have the same name with the their files and also an extens
 ### Clean up
 After every test there must be a tear down process by unmounting every components used in order to prevent the pollution of test environment
 ```javascript
+...
 import { mount } from 'enzyme'
 import App from './App'
 
@@ -53,10 +54,26 @@ beforeEach(()=> {
 afterEach(() => {
   wrapped = wrapped.unmount()
 })
+...
 ```
 
 ### Parent Child Testing
 A test for a parent component should not be awareof the internal implementation of its children component. It is enough for it to just be aware the existence of the children components.
+
+```javascript
+...
+import Child from './Child' //contains a className .child-class
+
+...
+const Parent = (props) => {
+  return (
+    ...
+    <Child />
+  )
+};
+
+export default Parent;
+```
 
 ### Bug
 Whenever a bug is fixed, there should be a regression test
