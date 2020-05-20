@@ -86,8 +86,10 @@ it('should render Child component', () => {
   expect(child.length).toBe(1);
 })
 ...
-```javascript
+```
 :heavy_check_mark: It is enough to know of the existence of the child component
+```javascript
+
 ...
 import { shallow } from 'enzyme'
 import Parent from './Parent'
