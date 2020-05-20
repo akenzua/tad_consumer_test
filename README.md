@@ -74,8 +74,24 @@ const Parent = (props) => {
 
 export default Parent;
 ```
-:x: It is not advisable to
+:x: Parent should not have intimate knowledge of the Child component, there should be separate test for the Child component in order to prevent future change in Child component from causing a failure in test for Parent component
 ```javascript
+...
+import { shallow } from 'enzyme'
+import Parent from './Parent'
+
+it('should render Child component', () => {
+  const component = shallow(<Parent/>);
+  const child = component.find('.child-class');
+  expect(child.length).toBe(1);
+})
+...
+```
+:heavy_check_mark: It is enough to know of the existence of the child component
+```javascript
+...
+
+...
 
 ```
 
