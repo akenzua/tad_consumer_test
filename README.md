@@ -58,7 +58,7 @@ afterEach(() => {
 ```
 
 ### Parent Child Testing
-A test for a parent component should not be awareof the internal implementation of its children component. It is enough for it to just be aware the existence of the children components.
+A test for a parent component should not be awareof the internal implementation of its children component. It is enough for it to just be aware the existence of the children components. For instance, to test the Parent component below:
 
 ```javascript
 ...
@@ -73,6 +73,10 @@ const Parent = (props) => {
 };
 
 export default Parent;
+```
+:x: It is not advisable to
+```javascript
+
 ```
 
 ### Bug
