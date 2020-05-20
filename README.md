@@ -86,13 +86,18 @@ it('should render Child component', () => {
   expect(child.length).toBe(1);
 })
 ...
-```
-:heavy_check_mark: It is enough to know of the existence of the child component
 ```javascript
+:heavy_check_mark: It is enough to know of the existence of the child component
 ...
+import { shallow } from 'enzyme'
+import Parent from './Parent'
+import Child from './Child'
 
+it('should render Child component', () => {
+  const component = shallow(<Parent/>);
+  expect(component.find(Child).length).toBe(1);
+})
 ...
-
 ```
 
 ### Bug
