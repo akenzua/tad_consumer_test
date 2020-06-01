@@ -12,11 +12,13 @@ import {
 } from "../components/Styles/Text";
 import { Button } from "../components/Styles/Button";
 import { UnorderedList, ListItems } from "../components/Styles/List";
+import WithProps from "../components/doc/WithProps";
+import WithoutProps from "../components/doc/WithoutProps";
 
 const Homepage = ({ t }) => {
   return (
     <Fragment>
-      <MainCard justify="space-between">
+      {/* <MainCard justify="space-between">
         <ContentCard max="700px">
           <HeadingOne align="left">
             {t("travel.home.banner.heading")}
@@ -67,7 +69,9 @@ const Homepage = ({ t }) => {
             )}
           </UnorderedList>
         </ContentCard>
-      </MainCard>
+      </MainCard> */}
+      <WithProps time={new Date(2020, 4, 25, 12, 33, 11, 34)} />
+      <WithoutProps />
     </Fragment>
   );
 };
